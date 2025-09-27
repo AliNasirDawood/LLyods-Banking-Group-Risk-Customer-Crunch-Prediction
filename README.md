@@ -1,2 +1,21 @@
-# LLyods-Banking-Group---Risk-Customer-Crunch-Prediction
-Lloyds Banking Group is facing rising customer churn, particularly among young professionals and small business owners. This project focuses on predicting churn using machine learning, analyzing customer data to identify at-risk individuals. The goal is to inform targeted retention strategies, improving loyalty and minimizing attrition
+# Customer Churn Prediction for Lloyds Banking Group
+
+## Overview
+This project aims to predict customer churn at Lloyds Banking Group, with a focus on improving retention strategies for young professionals and small business owners. By analyzing customer data and using machine learning, we aim to identify at-risk customers and provide insights for targeted interventions to reduce churn.
+
+## Problem
+Lloyds Banking Group, particularly SmartBank, is facing a concerning increase in customer churn. Losing valuable customers can impact profitability, resource allocation, and overall growth. This project addresses the need for data-driven insights to predict and minimize customer attrition.
+
+## Solution
+Using historical customer data, including demographics, transaction behavior, and engagement metrics, we will build a predictive model for customer churn. By identifying high-risk customers, the bank can implement personalized retention strategies, such as tailored offers and improved customer service, to reduce churn and boost customer loyalty.
+
+## Technologies Used
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- XGBoost, LightGBM
+- Jupyter Notebooks
+- Matplotlib, Seaborn
+
+## How to Run
+1. Clone the repository:
