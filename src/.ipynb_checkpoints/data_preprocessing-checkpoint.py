@@ -1,3 +1,4 @@
+
 import pandas as pd
 
 def load_data(file_path):
@@ -27,16 +28,17 @@ def feature_extraction(customer_demographics_df, transaction_history_df, custome
     df = pd.merge(df, customer_service_df, on='CustomerID', how='left')
     df = pd.merge(df, online_activity_df, on='CustomerID', how='left')
     
-   # Drop Date Time Columns
+   # Drop Columns
+    df.drop(columns = ['TransactionID', 'TransactionDate', 
+        'InteractionID', 'InteractionDate',
+        'LastLoginDate'
+       ], axis = 1)
     
     # Feature: Total spending (aggregation)
-    df['TotalSpent'] = df.groupby('CustomerID')['AmountSpent'].transform('sum')
+    # df['TotalSpent'] = df.groupby('CustomerID')['AmountSpent'].transform('sum')
       
-    # Feature: Login Frequency (aggregated)
-    df['LoginFrequency'] = df.groupby('CustomerID')['LoginFrequency'].transform('count')
-
     # Product category frequency 
-    
+    #print(df.columns)
     
     return df
 
@@ -62,7 +64,8 @@ def handling_missing_data(df):
     
     return df_imputed
 # Load data from the Excel file
-file_path = 'path_to_your_excel_file.xlsx'
+file_path = r'C:\Users\alina\Desktop\Portfolio\LLyods-Banking-Group-Risk-Customer-Crunch-Prediction\data\Customer_Churn_Data_Large.xlsx'
+
 customer_demographics_df, transaction_history_df, customer_service_df, online_activity_df, churn_status_df = load_data(file_path)
 
 # Feature extraction: Combine datasets and create new features
