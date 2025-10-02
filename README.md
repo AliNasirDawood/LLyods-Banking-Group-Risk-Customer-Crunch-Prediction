@@ -17,5 +17,3 @@ Using historical customer data, including demographics, transaction behavior, an
 - Jupyter Notebooks
 - Matplotlib, Seaborn
 
-## How to Run
-1. Clone the repository:
