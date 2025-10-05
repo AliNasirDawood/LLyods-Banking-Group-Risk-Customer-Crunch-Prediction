@@ -1,5 +1,5 @@
 pandas
-numpy
+# numpy
 plotly
 openpyxl
-sklearn
+streamlit

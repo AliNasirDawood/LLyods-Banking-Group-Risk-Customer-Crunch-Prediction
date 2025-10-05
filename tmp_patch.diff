@@ -1,0 +1,61 @@
+*** Begin Patch
+*** Update File: lloyds_churn_dashboard_Version3.py
+@@
+-import pandas as pd
+-import plotly.express as px
+-import streamlit as st
+-
+-st.set_page_config(layout="wide", page_title="Lloyds Customer Churn Dashboard")
+-
+-DATA_PATH = Path(__file__).resolve().parent / "data" / "Customer_Churn_Data_Large.xlsx"
++import pandas as pd
++import plotly.express as px
++import streamlit as st
++
++st.set_page_config(layout="wide", page_title="Lloyds Customer Churn Dashboard")
++
++BASE_PATH = Path(__file__).resolve().parent
++DATA_PATH = BASE_PATH / "data" / "Customer_Churn_Data_Large.xlsx"
++LOGO_PATH = BASE_PATH / "LLOYDS-BANKNEG-1002x709.avif"
+@@
+-
+st.title("Lloyds Banking Group - Customer Churn Dashboard")
+-st.caption(
+-    "Explore churn trends across customer demographics, spending, service interactions, and digital engagement."
+-)
++st.markdown(
++    """
++    <style>
++        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
++        .title-container {
++            display: flex;
++            align-items: center;
++            gap: 1.2rem;
++            margin-bottom: 1rem;
++        }
++        .app-title {
++            font-family: 'Monstrate', 'Montserrat', sans-serif;
++            font-size: 2.4rem;
++            font-weight: 600;
++            color: #0b3d2a;
++            margin: 0;
++        }
++    </style>
++    """,
++    unsafe_allow_html=True,
++)
++
++logo_col, title_col = st.columns([1, 5], gap="small")
++with logo_col:
++    if LOGO_PATH.exists():
++        st.image(str(LOGO_PATH), use_column_width=True)
++with title_col:
++    st.markdown(
++        "<h1 class='app-title'>LLyods Banking Group Risk Customer Crunch Analysis</h1>",
++        unsafe_allow_html=True,
++    )
++
++st.caption(
++    "Explore churn trends across customer demographics, spending, service interactions, and digital engagement."
++)
+*** End Patch
