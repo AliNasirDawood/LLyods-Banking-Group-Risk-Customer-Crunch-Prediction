@@ -189,7 +189,7 @@ total_spend = transactions_filtered["AmountSpent"].sum() if not transactions_fil
 total_categories = transactions_filtered["ProductCategory"].nunique() if not transactions_filtered.empty else 0
 
 overview_tab,explore_tab = st.tabs(
-    ["Overview", "Data Explorer"]
+    ["Data Analysis", "Data Explorer"]
 )
 
 with overview_tab:
@@ -439,8 +439,8 @@ with explore_tab:
 # import plotly.graph_objects as go
 
 
-# # Assuming you have filtered customer data in filtered_customers
-# # Merge filtered_customers with transaction_history to include ProductCategory
+# Assuming you have filtered customer data in filtered_customers
+# Merge filtered_customers with transaction_history to include ProductCategory
 # merged_data = filtered_customers.merge(transaction_history[['CustomerID', 'ProductCategory']], on='CustomerID', how='left')
 
 # # Aggregate the data: count customers for each combination of the categories
@@ -497,7 +497,7 @@ with explore_tab:
 #         source=sources,
 #         target=targets,
 #         value=values,
-#         color="#4ad627"  # Consistent color for links
+#         color="#8cfc70"  # Consistent color for links
 #     )
 # ))
 
@@ -512,4 +512,4 @@ with explore_tab:
 # st.plotly_chart(fig, use_container_width=True)
 
 
-# st.caption("Churn status: 1 = churned, 0 = active.")
+st.caption("Churn status: 1 = churned, 0 = active.")
