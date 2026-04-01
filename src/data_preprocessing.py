@@ -1,5 +1,6 @@
 
 import pandas as pd
+from sklearn.impute import IterativeImputer
 
 def load_data(file_path):
     """
@@ -45,7 +46,7 @@ def feature_extraction(customer_demographics_df, transaction_history_df, custome
 
     
 
-from sklearn.impute import IterativeImputer
+
 
 def handling_missing_data(df):
     """
